@@ -1,0 +1,36 @@
+
+
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    
+    left = arr[:mid]
+    right = arr[mid:]
+    
+    merge_sort(left)
+    merge_sort(right)
+    
+    index = lindex = rindex = 0
+    
+    while lindex < len(left) and rindex < len(right):
+        if left[lindex] <= right[rindex]:
+            arr[index] = left[lindex]
+            lindex += 1
+        else:
+            arr[index] = right[rindex]
+            rindex += 1
+        index += 1
+    
+    while lindex < len(left):
+        arr[index] = left[lindex]
+        lindex += 1
+        index += 1
+    while rindex < len(right):
+        arr[index] = right[rindex]
+        rindex += 1
+        index += 1
+        
+arr = [1, -10, -22, 25, 35]
+merge_sort(arr)
+print(arr)
