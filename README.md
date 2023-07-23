@@ -1,3 +1,3 @@
 # DSA
 
-Algorithms
+Data Structures Algorithms
